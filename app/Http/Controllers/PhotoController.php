@@ -9,7 +9,13 @@ use App\Http\Controllers\Controller;
 
 class PhotoController extends Controller
 {
-    public function index(){
-    	die('PHOTO/INDEX');
+    public function create(){
+        die('Photo/CREATE');
+    }
+    public function store(Request $request){
+
+    }
+    public function details($id){
+        die($id);
     }
 }

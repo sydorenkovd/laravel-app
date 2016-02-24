@@ -10,9 +10,16 @@ use App\Http\Controllers\Controller;
 class GalleryController extends Controller
 {
     public function index(){
-    	die('GALLERY/INDEX');
+        $test = 'testing';
+    	return view('gallery/index', compact('test'));
     }
     public function create(){
-    	die('GALERRY/CREATE');
+    	return view('gallery/create');
+    }
+    public function store(Request $request){
+
+    }
+    public function show($id){
+        die($id);
     }
 }
