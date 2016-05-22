@@ -29,7 +29,6 @@
                     <span class="title-bar-title">Mike Mikerson</span>
                 </div>
             </div>
-<hr>
             @yield('content')
         </div>
     </div>
