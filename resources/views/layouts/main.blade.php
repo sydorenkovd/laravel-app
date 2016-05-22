@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="/laravel/public/css/foundation.css">
-    <link rel="stylesheet" href="/laravel/public/css/app.css">
+    <title>PhotoGallery | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 <div class="off-canvas-wrapper">
@@ -13,9 +13,13 @@
         <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
             <div class="row column">
                 <br>
-                <img class="thumbnail" src="http://placehold.it/550x350">
-                <h5>Mike Mikerson</h5>
-                <p>Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo.</p>
+            <h5>Main Menu</h5>
+                <ul class="side-nav">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="/login">Login</a> </li>
+                    <li><a href="/register">Register</a> </li>
+                    <li><a href="/gallery/create">Create Gallery</a> </li>
+                </ul>
             </div>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
@@ -109,10 +113,10 @@
         </div>
     </div>
 </div>
-<script src="/laravel/public/js/vendor/foundation.js"></script>
-<script src="/laravel/public/js/vendor/jquery.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/vendor/jquery.js"></script>
 {{--<script src="js/vendor/what-input.js"></script>--}}
-<script src="/laravel/public/js/app.js"></script>
+<script src="js/app.js"></script>
 <script>
     $(document).foundation();
 </script>
