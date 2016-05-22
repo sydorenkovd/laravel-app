@@ -7,7 +7,7 @@
     <title>Photo Galery | Welcome</title>
 </head>
 <body>
-<ul class="list-group">
+<ul class="list-group ">
     <li class="list-group-info"><a href="/">Home</a></li>
     <li class="list-group-item-info"><a href="login">Login</a></li>
     <li class="list-group-item-info"><a href="register">Register</a></li>
