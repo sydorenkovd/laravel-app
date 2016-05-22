@@ -17,7 +17,17 @@ class GalleryController extends Controller
     	return view('gallery/create');
     }
     public function store(Request $request){
-
+        //get request input
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $cover_image = $request->file('cover_image');
+        $owner_id = 1;
+        //check image upload
+        if($cover_image){
+            die('yes');
+        } else {
+            die('now');
+        }
     }
     public function show($id){
         die($id);
