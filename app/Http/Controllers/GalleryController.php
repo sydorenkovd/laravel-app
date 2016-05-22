@@ -9,9 +9,11 @@ use App\Http\Controllers\Controller;
 
 class GalleryController extends Controller
 {
+    //set teble name
+    private $table = 'galleries';
     public function index(){
       // galleries
-        $galleries = DB::table('galleries')->get();
+        $galleries = DB::table($this->table)->get();
     	return view('gallery/index', compact('galleries'));
     }
     public function create(){
@@ -31,7 +33,7 @@ class GalleryController extends Controller
             $cover_image_filename = 'noimage.jpg';
         }
         //insert into database
-DB::table('galleries')->insert(
+DB::table($this->table)->insert(
     [
         'name' => $name,
         'description' => $description,
@@ -43,6 +45,10 @@ DB::table('galleries')->insert(
         return \Redirect::route('gallery.index')->with('message', 'Gallery Created');
     }
     public function show($id){
-        die($id);
+        //get gallery
+        $gallery = DB::table($this->table)->where('id', $id)->first();
+        //get the phohos
+        $photos = DB::table('photos')->where('gallery_id', $id)->get();
+        return view('gallery/show', compact('gallery', 'photos'));
     }
 }
