@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="/css/foundation.css">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/laravel/public/css/foundation.css">
+    <link rel="stylesheet" href="/laravel/public/css/app.css">
 </head>
 <body>
 <div class="off-canvas-wrapper">
@@ -109,10 +109,10 @@
         </div>
     </div>
 </div>
-<script src="js/vendor/foundation.js"></script>
-<script src="js/vendor/jquery.js"></script>
+<script src="/laravel/public/js/vendor/foundation.js"></script>
+<script src="/laravel/public/js/vendor/jquery.js"></script>
 {{--<script src="js/vendor/what-input.js"></script>--}}
-<script src="js/app.js"></script>
+<script src="/laravel/public/js/app.js"></script>
 <script>
     $(document).foundation();
 </script>
