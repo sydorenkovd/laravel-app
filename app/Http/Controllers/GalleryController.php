@@ -10,8 +10,9 @@ use App\Http\Controllers\Controller;
 class GalleryController extends Controller
 {
     public function index(){
-        $test = 'testing';
-    	return view('gallery/index', compact('test'));
+      // galleries
+        $galleries = DB::table('galleries')->get();
+    	return view('gallery/index', compact('galleries'));
     }
     public function create(){
     	return view('gallery/create');
