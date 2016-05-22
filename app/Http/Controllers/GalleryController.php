@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,10 +24,22 @@ class GalleryController extends Controller
         $owner_id = 1;
         //check image upload
         if($cover_image){
-            die('yes');
+            $cover_image_filename = $cover_image->getClientOriginalName();
+            $cover_image->move(public_path('images'), $cover_image_filename);
         } else {
-            die('now');
+            $cover_image_filename = 'noimage.jpg';
         }
+        //insert into database
+DB::table('galleries')->insert(
+    [
+        'name' => $name,
+        'description' => $description,
+        'cover_image' => $cover_image_filename,
+        'owner_id' => $owner_id
+    ]
+);
+        //redirect
+        return \Redirect::route('gallery.index')->with('message', 'Gallery Created');
     }
     public function show($id){
         die($id);

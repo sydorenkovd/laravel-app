@@ -29,6 +29,11 @@
                     <span class="title-bar-title">Mike Mikerson</span>
                 </div>
             </div>
+            @if(Session::has('message'))
+                <div class="alert alert-info">
+                    {{ Session::get('message') }}
+                </div>
+            @endif;
             @yield('content')
         </div>
     </div>
