@@ -46,7 +46,8 @@ class PhotoController extends Controller
     }
     public function details($id){
        // get photho
-
+$photo = DB::table($this->table)->where('id', $id)->first();
+        return view('photo/details', compact('photo'));
     }
     public function index(){
         // galleries
