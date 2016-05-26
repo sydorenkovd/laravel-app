@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcce02d5-e6f6-4d50-a302-6df461a2247d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel.iws" />
@@ -641,7 +639,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464283713237</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="check auth and display stuff for logged users">
+      <created>1464284118187</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1464284118187</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -700,7 +704,8 @@
     <MESSAGE value="actually gallery of photo are sorted by galleries" />
     <MESSAGE value="details" />
     <MESSAGE value="check auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="check auth" />
+    <MESSAGE value="check auth and display stuff for logged users" />
+    <option name="LAST_COMMIT_MESSAGE" value="check auth and display stuff for logged users" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
