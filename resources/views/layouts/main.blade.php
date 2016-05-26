@@ -18,7 +18,9 @@
                     <li><a href="/">Home</a> </li>
                     <li><a href="/login">Login</a> </li>
                     <li><a href="/register">Register</a> </li>
+                    <?php if(Auth::check()) : ?>
                     <li><a href="/gallery/create">Create Gallery</a> </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
