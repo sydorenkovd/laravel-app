@@ -33,7 +33,7 @@
                 <div data-alert class="alert-box">
                     {{ Session::get('message') }}
                 </div>
-            @endif;
+            @endif
             @yield('content')
         </div>
     </div>

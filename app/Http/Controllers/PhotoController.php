@@ -11,8 +11,9 @@ use DB;
 class PhotoController extends Controller
 {
     private $table = 'galleries';
-    public function create(){
-        die('Photo/CREATE');
+    public function create($gallery_id){
+        //render view
+        return view('photo/create', compact('gallery_id'));
     }
     public function store(Request $request){
 
