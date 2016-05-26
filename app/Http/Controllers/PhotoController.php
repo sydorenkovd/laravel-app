@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Auth;
 
 class PhotoController extends Controller
 {
     private $table = 'photos';
     public function create($gallery_id){
         //render view
+        if(!Auth::check()){
+            return \Redirect::route('gallery.index')->with('message', 'Access Failed');
+        }
         return view('photo/create', compact('gallery_id'));
     }
     public function store(Request $request){

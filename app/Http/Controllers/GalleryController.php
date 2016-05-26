@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class GalleryController extends Controller
 {
@@ -17,6 +18,9 @@ class GalleryController extends Controller
     	return view('gallery/index', compact('galleries'));
     }
     public function create(){
+        if(!Auth::check()){
+            return \Redirect::route('gallery.index')->with('message', 'Access Failed');
+        }
     	return view('gallery/create');
     }
     public function store(Request $request){
