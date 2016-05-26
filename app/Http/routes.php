@@ -10,13 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/',  'GalleryController@index');
 Route::resource('gallery', 'GalleryController');
 Route::resource('photo', 'PhotoController');
 Route::get('/gallery/show/{id}', 'GalleryController@show');
 Route::get('/photo/create/{id}', 'PhotoController@create');
 Route::get('/photo/details/{id}', 'PhotoController@details');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,3 +31,7 @@ Route::get('/photo/details/{id}', 'PhotoController@details');
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
