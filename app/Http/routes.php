@@ -33,7 +33,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/photo/details/{id}', 'PhotoController@details');
     Route::get('/home', 'HomeController@index');
     Route::get('/photo', function(\App\Photos $photos){
-        $photoss = $photos->paginate(5);
+
+        $photoss = $photos->paginate(12);
         return view('photo.index')->withPhotoss($photoss);
     });
 

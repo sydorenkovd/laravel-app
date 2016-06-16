@@ -20,6 +20,7 @@
             <h5>Main Menu</h5>
                 <ul class="side-nav">
                     <li><a href="/">Home</a> </li>
+                    <li><a href="/photo">All Photos</a> </li>
                     <?php if(Auth::check()) : ?>
                     <li><a href="/gallery/create">Create Gallery</a> </li>
                     <?php endif; ?>

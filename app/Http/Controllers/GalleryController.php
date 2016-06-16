@@ -55,7 +55,7 @@ DB::table($this->table)->insert(
         //get gallery
         $gallery = DB::table($this->table)->where('id', $id)->first();
         //get the phohos
-        $photos = DB::table('photos')->where('gallery_id', $id)->paginate(5);
+        $photos = DB::table('photos')->where('gallery_id', $id)->get();
         return view('gallery/show', compact('gallery', 'photos'));
     }
 }
