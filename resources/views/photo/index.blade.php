@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-        <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Photos</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-</head>
-<body>
-    @if($photoss->count())
-        @foreach($photoss as $photo)
-            <h4>{{$photo->name}}</h4>
-            @endforeach
-        {{ $photoss->render() }}
+@extends('layouts.main')
+@section('content')
+    <div class="callout primary">
 
+    </div>
+    <div class="row small-up-2 medium-up-3 large-up-4">
+        @if($photoss->count())
+        <?php foreach($photoss as $photo) : ?>
+        <div class="column">
+            <a href="/photo/details/{{$photo->id}}">
+                <img class="thumbnail" src="/images/{{$photo->image}}">
+            </a>
+            <h5>{{$photo->title}}</h5>
+            <p>{{$photo->description}}</p>
+        </div>
+        <?php endforeach; ?>
+    </div>
+            @include('pagination.custom', ['paginator' => $photoss])
         @endif
-</body>
-</html>
+
+
+@stop
