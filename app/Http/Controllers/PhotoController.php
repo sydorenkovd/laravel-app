@@ -21,6 +21,9 @@ class PhotoController extends Controller
     }
     public function store(Request $request){
 //get request input
+        if(!Auth::check()){
+            return \Redirect::route('gallery.index')->with('message', 'Access Failed');
+        }
         $gallery_id = $request->input('gallery_id');
         $title = $request->input('title');
         $description = $request->input('description');

@@ -16,11 +16,24 @@
             <h5>Main Menu</h5>
                 <ul class="side-nav">
                     <li><a href="/">Home</a> </li>
-                    <li><a href="/login">Login</a> </li>
-                    <li><a href="/register">Register</a> </li>
                     <?php if(Auth::check()) : ?>
                     <li><a href="/gallery/create">Create Gallery</a> </li>
                     <?php endif; ?>
+
+                </ul>
+            </div>
+        </div>
+        <div class="off-canvas position-right reveal-for-large" id="my-info" data-off-canvas data-position="left">
+            <div class="row column">
+                <ul class="side-nav">
+                    <?php if(!Auth::check()) : ?>
+                    <li><a href="/login">Login</a> </li>
+                    <li><a href="/register">Register</a> </li>
+                    <?php endif; ?>
+                    <?php if(Auth::check()) : ?>
+                    <li><a href="/logout">Logout</a> </li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
         </div>

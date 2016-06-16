@@ -25,6 +25,9 @@ class GalleryController extends Controller
     }
     public function store(Request $request){
         //get request input
+        if(!Auth::check()){
+            return \Redirect::route('gallery.index')->with('message', 'Access Failed');
+        }
         $name = $request->input('name');
         $description = $request->input('description');
         $cover_image = $request->file('cover_image');
@@ -52,7 +55,7 @@ DB::table($this->table)->insert(
         //get gallery
         $gallery = DB::table($this->table)->where('id', $id)->first();
         //get the phohos
-        $photos = DB::table('photos')->where('gallery_id', $id)->get();
+        $photos = DB::table('photos')->where('gallery_id', $id)->paginate(5);
         return view('gallery/show', compact('gallery', 'photos'));
     }
 }
