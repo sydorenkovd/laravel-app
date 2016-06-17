@@ -4,7 +4,7 @@
         <div class="row column">
             <a href="/gallery/show/{{$photo->gallery_id}}">Back to Gallery</a>
             <h1>{{$photo->title}}</h1>
-            <p class="lead">{{$photo->description}}</p>
+            <p class="lead">Description: {{$photo->description}}</p>
             <p class="lead">Location: {{$photo->location}}</p>
         </div>
     </div>

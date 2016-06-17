@@ -25,9 +25,6 @@ class GalleryController extends Controller
     }
     public function store(Request $request){
         //get request input
-        if(!Auth::check()){
-            return \Redirect::route('gallery.index')->with('message', 'Access Failed');
-        }
         $name = $request->input('name');
         $description = $request->input('description');
         $cover_image = $request->file('cover_image');

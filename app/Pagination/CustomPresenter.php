@@ -20,6 +20,9 @@ class CustomPresenter implements PresenterContract
         $this->paginator = $paginator;
         $this->window = is_null($window) ? UrlWindow::make($paginator) : $window->get();
     }
+    /*
+     * here we are rendering our custom pagination
+     */
     public function render(){
         if ($this->hasPages()) {
             return new HtmlString(sprintf(
