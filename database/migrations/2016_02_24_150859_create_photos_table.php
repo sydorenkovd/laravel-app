@@ -23,8 +23,8 @@ class CreatePhotosTable extends Migration
             $table->timestamps();
             $table->index('owner_id', 'cfx_owner_id');
             $table->index('gallery_id', 'cfx_gallery_id');
-            $table->foreign('owner_id')->references('id')->on('users');
-            $table->foreign('gallery_id')->references('id')->on('galleries');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');;
         });
     }
 
