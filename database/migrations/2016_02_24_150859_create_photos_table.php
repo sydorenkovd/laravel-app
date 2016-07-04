@@ -19,7 +19,12 @@ class CreatePhotosTable extends Migration
             $table->string('location');
             $table->string('image');
             $table->integer('owner_id');
+            $table->integer('gallery_id');
             $table->timestamps();
+            $table->index('owner_id', 'cfx_owner_id');
+            $table->index('gallery_id', 'cfx_gallery_id');
+            $table->foreign('owner_id')->references('id')->on('users');
+            $table->foreign('gallery_id')->references('id')->on('galleries');
         });
     }
 

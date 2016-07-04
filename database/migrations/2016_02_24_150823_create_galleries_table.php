@@ -19,6 +19,8 @@ class CreateGalleriesTable extends Migration
             $table->string('cover_image');
             $table->integer('owner_id');
             $table->timestamps();
+            $table->index('owner_id', 'cfv_owner_id');
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 
