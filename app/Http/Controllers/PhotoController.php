@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Auth;
+use App\Photos;
 
 class PhotoController extends Controller
 {
@@ -48,7 +49,7 @@ class PhotoController extends Controller
         //redirect
         return \Redirect::route('gallery.show', ['id' => $gallery_id])->with('message', 'Gallery Created');
     }
-    public function details($id){
+    public function show($id){
        // get photho
 $photo = DB::table($this->table)->where('id', $id)->first();
         return view('photo/details', compact('photo'));
@@ -57,5 +58,38 @@ $photo = DB::table($this->table)->where('id', $id)->first();
         // galleries
         $galleries = DB::table($this->table)->get();
         return view('gallery/index', compact('galleries'));
+    }
+    public function edit($id)
+    {
+        $photo = Photos::findOrFail($id);
+
+        return view('photo/edit')->withPhoto($photo);
+    }
+    public function update($id, Request $request)
+    {
+        $photo = Photos::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $photo->fill($input)->save();
+
+//        Session::flash('flash_message', 'Task successfully added!');
+
+        return redirect()->back();
+    }
+    public function destroy($id)
+    {
+        $photo = Photos::findOrFail($id);
+
+        $photo->delete();
+
+//        Session::flash('flash_message', 'Task successfully deleted!');
+
+        return redirect()->action('GalleryController@index');
     }
 }

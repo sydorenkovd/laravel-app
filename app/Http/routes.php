@@ -30,7 +30,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('photo', 'PhotoController');
     Route::get('/gallery/show/{id}', 'GalleryController@show');
     Route::get('/photo/create/{id}', 'PhotoController@create');
-    Route::get('/photo/details/{id}', 'PhotoController@details');
+    Route::get('/photo/details/{id}', 'PhotoController@show');
+    Route::get('/photo/edit/{id}', 'PhotoController@edit');
+    Route::get('/photo/delete/{id}', 'PhotoController@destroy');
     Route::get('/home', 'HomeController@index');
     Route::get('/photo', function(\App\Photos $photos){
 
