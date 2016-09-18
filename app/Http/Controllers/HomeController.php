@@ -26,4 +26,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function test() {
+        $test = [];
+        return view('test', ['test' => $test]);
+    }
 }

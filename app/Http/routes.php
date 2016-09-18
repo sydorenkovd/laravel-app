@@ -25,6 +25,7 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
+    Route::get('/test', 'HomeController@test');
     Route::get('/',  'GalleryController@index');
     Route::resource('gallery', 'GalleryController');
     Route::resource('photo', 'PhotoController');
