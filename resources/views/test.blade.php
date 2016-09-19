@@ -9,15 +9,19 @@
 
                     <div class="panel-body">
                         <ul>
-                            @forelse($test as $tests)
+                            @if(count($test) > 0)
+                            @foreach($test as $tests)
                                 <li>{{$tests}}</li>
-                                @empty
-                            <li>
-                                There are no items
-                            </li>
-                                @endforelse
+                                @endforeach
+                                @else
+                                <li>
+                                    There are no items
+                                </li>
+                                @endif
                         </ul>
-
+                        <?php $tom = 'tili'; ?>
+                        @include('errors.blood', ['tom' => $tom])
+                        {!! Html::image('images/here.png') !!}
                     </div>
                 </div>
             </div>

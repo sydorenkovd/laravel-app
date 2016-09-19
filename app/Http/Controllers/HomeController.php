@@ -27,7 +27,7 @@ class HomeController extends Controller
         return view('home');
     }
     public function test() {
-        $test = [];
+        $test = ['testino', 'manstru'];
         return view('test', ['test' => $test]);
     }
 }
