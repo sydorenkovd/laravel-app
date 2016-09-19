@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcce02d5-e6f6-4d50-a302-6df461a2247d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/errors/blood.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/test.blade.php" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel.iws" />
@@ -537,7 +532,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474227971669</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="blade">
+      <created>1474316359085</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1474316359085</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -579,7 +580,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="backwards" />
     <MESSAGE value="some refactoring code" />
     <MESSAGE value="done" />
     <MESSAGE value="form" />
@@ -604,7 +604,8 @@
     <MESSAGE value="done for ITREX2 here" />
     <MESSAGE value="done for ITREX2 heres" />
     <MESSAGE value="laravel app" />
-    <option name="LAST_COMMIT_MESSAGE" value="laravel app" />
+    <MESSAGE value="blade" />
+    <option name="LAST_COMMIT_MESSAGE" value="blade" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
