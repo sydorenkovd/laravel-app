@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcce02d5-e6f6-4d50-a302-6df461a2247d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/WelcomeTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/test.blade.php" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel.iws" />
@@ -592,7 +587,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474316359085</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="laravel php unit test">
+      <created>1474399213286</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1474399213286</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -634,7 +635,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some refactoring code" />
     <MESSAGE value="done" />
     <MESSAGE value="form" />
     <MESSAGE value="create store method and test" />
@@ -659,7 +659,8 @@
     <MESSAGE value="done for ITREX2 heres" />
     <MESSAGE value="laravel app" />
     <MESSAGE value="blade" />
-    <option name="LAST_COMMIT_MESSAGE" value="blade" />
+    <MESSAGE value="laravel php unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="laravel php unit test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
