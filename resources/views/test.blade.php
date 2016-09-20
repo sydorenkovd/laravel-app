@@ -23,6 +23,7 @@
                         @include('errors.blood', ['tom' => $tom])
                         {!! Html::image('images/here.png') !!}
                     </div>
+                    <a href="/about/contact" class="btn btn-primary">Contact Us</a>
                 </div>
             </div>
         </div>

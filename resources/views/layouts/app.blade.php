@@ -14,7 +14,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
+    {!! Html::style('css/app.css') !!}
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: 'Lato';
@@ -26,6 +28,9 @@
     </style>
 </head>
 <body id="app-layout">
+<div class="layout">
+    <p>hello red</p>
+</div>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
