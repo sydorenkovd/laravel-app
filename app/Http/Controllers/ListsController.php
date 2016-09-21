@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Photos;
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class ListsController extends Controller
 {
@@ -15,7 +18,8 @@ class ListsController extends Controller
      */
     public function index()
     {
-       return view('lists.index');
+        $photos = Photos::orderBy('title', 'DESC')->paginate(5);
+       return view('lists.index', compact('photos'));
     }
 
     /**
@@ -47,7 +51,8 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        //
+       $photo = Photos::where('id',\DB::raw('FLOOR(RAND() * 10)'))->first();
+        return view('lists.show', ['photo' => $photo]);
     }
 
     /**

@@ -1,4 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <h1>List here</h1>
+    {{--@foreach($photos as $photo)--}}
+        <div class="row">
+            <div class="col-sm-offset-6 col-sm-6">
+                <h1>{{$photos->render()}}</h1>
+            </div>
+        </div>
+
+    {{--@endforeach--}}
     @endsection

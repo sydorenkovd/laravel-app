@@ -51,7 +51,8 @@ class PhotoController extends Controller
     }
     public function show($id){
        // get photho
-$photo = DB::table($this->table)->where('id', $id)->first();
+//$photo = DB::table($this->table)->where('id', $id)->first();
+        $photo = Photos::findOrFail($id);
         return view('photo/details', compact('photo'));
     }
     public function index(){

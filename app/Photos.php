@@ -2,6 +2,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+/**
+ * App\Photos
+ *
+ * @mixin \Eloquent
+ */
 class Photos extends Model{
     protected $table = 'photos';
     protected $fillable = [
