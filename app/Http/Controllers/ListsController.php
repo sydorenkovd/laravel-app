@@ -86,6 +86,8 @@ class ListsController extends Controller
      */
     public function destroy($id)
     {
-        //
+       Photos::destroy($id);
+        return \Redirect::route('lists.index')->withMessage('record deleted');
+
     }
 }
