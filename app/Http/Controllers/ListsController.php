@@ -51,8 +51,9 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-//       $photo = Photos::where('id',\DB::raw('FLOOR(RAND() * 10)'))->first();
-        $photo =  Photos::find(1);
+//        $photo =  Photos::find(1);
+        $photo = new Photos();
+        $photo->title = 'titel';
         return view('lists.show', ['photo' => $photo]);
     }
 

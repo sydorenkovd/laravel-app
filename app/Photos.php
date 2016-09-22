@@ -23,4 +23,7 @@ class Photos extends Model{
     public function getFulldescriptionAttribute() {
         return $this->title . ' ' . $this->description;
     }
+    public function setTitleAttribute($title) {
+        $this->attributes['title'] = \Hash::make($title);
+    }
 }
