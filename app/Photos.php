@@ -20,4 +20,7 @@ class Photos extends Model{
     protected $hidden = [
         'updated_at', 'created_at',
     ];
+    public function getFulldescriptionAttribute() {
+        return $this->title . ' ' . $this->description;
+    }
 }
