@@ -51,9 +51,11 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        $photo =  Photos::find(1);
-        $testc = Carbon::now('europe/kiev');
-        return view('lists.show', ['photo' => $photo, 'testc' => $testc]);
+//        $photo =  Photos::find(1);
+//        $testc = Carbon::now('europe/kiev');
+        $photo = new Photos(['title' => 'My name is']);
+        $photo->save();
+        return view('lists.show', ['photo' => $photo]);
     }
 
     /**

@@ -26,6 +26,9 @@ class Photos extends Model
     protected $hidden = [
         'updated_at', 'created_at',
     ];
+    protected $sluggable = array(
+        'build_from' => 'title',
+        'save_to' => 'slug',);
     /**
      * Return the sluggable configuration array for this model.
      *

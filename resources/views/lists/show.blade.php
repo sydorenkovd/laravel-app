@@ -1,11 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-    <h6>{{ $photo}}</h6>
-    <?php
-    /**
-     * @var $testc
-     */
-            echo $testc;
-    ?>
+    <h6>{{ $photo->slug }}</h6>
+
     @endsection
