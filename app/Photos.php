@@ -49,7 +49,7 @@ class Photos extends Model
 
     public function setTitleAttribute($title)
     {
-        $this->attributes['title'] = 'julia' . $title;
+        $this->attributes['title'] = '' . $title;
     }
 /**
  * Carbon test for no reason
