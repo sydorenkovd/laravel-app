@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Photos;
 use App\Post;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 
@@ -51,10 +51,9 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-//        $photo =  Photos::find(1);
-        $photo = new Photos();
-        $photo->title = 'titel';
-        return view('lists.show', ['photo' => $photo]);
+        $photo =  Photos::find(1);
+        $testc = Carbon::now('europe/kiev');
+        return view('lists.show', ['photo' => $photo, 'testc' => $testc]);
     }
 
     /**
