@@ -5,3 +5,4 @@ vendor/
 .phpstorm.meta.php
 .gitignore
 .idea/workspace.xml
+public/img/
