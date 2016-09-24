@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 /**
@@ -11,6 +12,8 @@ use Carbon\Carbon;
  */
 class Photos extends Model
 {
+    use Sluggable;
+
     protected $table = 'photos';
     protected $fillable = [
         'title',
@@ -23,7 +26,19 @@ class Photos extends Model
     protected $hidden = [
         'updated_at', 'created_at',
     ];
-
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
     public function getFulldescriptionAttribute()
     {
         return $this->title . ' ' . $this->description;
