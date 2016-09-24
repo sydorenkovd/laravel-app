@@ -14,9 +14,14 @@ class PhotosTableSeeder extends Seeder
      */
     public function run()
     {
-        Photos::create([
-            'title' => 'San Juan Vacation',
-            'description' => 'Things to do before we leave for Puerto Rico!'
-        ]);
+        $faker = \Faker\Factory::create();
+         foreach(range(51,100) as $index)
+         {
+             Photos::create([
+                 'title' => $faker->sentence(2),
+                 'description' => $faker->sentence(4),
+//                 'location' => $faker->sentence(5),
+            ]);
+         }
     }
 }

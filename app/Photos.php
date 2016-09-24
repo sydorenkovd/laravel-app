@@ -31,7 +31,7 @@ class Photos extends Model
 
     public function setTitleAttribute($title)
     {
-        $this->attributes['title'] = \Hash::make($title);
+        $this->attributes['title'] = 'julia' . $title;
     }
 /**
  * Carbon test for no reason

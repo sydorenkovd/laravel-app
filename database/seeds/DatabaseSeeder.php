@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('photos')->truncate();
+//        DB::table('photos')->truncate();
         $this->call('PhotosTableSeeder');
     }
 }
