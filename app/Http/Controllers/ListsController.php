@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Photos;
 use App\Post;
+use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests;
@@ -51,11 +53,12 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-//        $photo =  Photos::find(1);
-//        $testc = Carbon::now('europe/kiev');
-        $photo = new Photos(['title' => 'My name is']);
-        $photo->save();
-        return view('lists.show', ['photo' => $photo]);
+//        $user = User::find(1)->profile->url;
+        $profile = new Profile();
+        $profile->telephone = '67676767676';
+        $user = User::find(2);
+        $user->profile()->save($profile);
+        return view('lists.show', ['photo' => $user]);
     }
 
     /**
