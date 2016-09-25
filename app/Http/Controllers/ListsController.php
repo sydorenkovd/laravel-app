@@ -53,12 +53,8 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-//        $user = User::find(1)->profile->url;
-        $profile = new Profile();
-        $profile->telephone = '67676767676';
-        $user = User::find(2);
-        $user->profile()->save($profile);
-        return view('lists.show', ['photo' => $user]);
+        $email = Profile::where('telephone', '1324121')->get()->first()->user->email;
+        return view('lists.show', ['photo' => $email]);
     }
 
     /**
