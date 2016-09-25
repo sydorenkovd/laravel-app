@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Photos;
 use App\Post;
 use App\Profile;
@@ -56,21 +57,6 @@ class ListsController extends Controller
     public function show($id)
     {
         $photo = Photos::find($id);
-//        $category = new Category(['name' => 'Vacation']);
-//        $photo->categories()->save($category);
-//        $photo->categories()->detach([1]);
-        $list = Photos::find(2);
-//
-//        $categories = [
-//            new Category(['name' => 'Vacation']),
-//            new Category(['name' => 'Tropical']),
-//            new Category(['name' => 'Leisure']),
-//        ];
-        $list->categories()->updateExistingPivot(
-            '3', ['description' => 'Cause i dont care about nothing']
-        );
-
-//        $list->categories()->saveMany($categories);
         return view('lists.show', ['photo' => $photo]);
     }
 

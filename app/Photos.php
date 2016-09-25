@@ -29,7 +29,6 @@ class Photos extends Model
     protected $sluggable = array(
         'build_from' => 'title',
         'save_to' => 'slug',);
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -39,6 +38,10 @@ class Photos extends Model
     }
     public function categories() {
         return $this->belongsToMany('App\Category')->withTimestamps();
+    }
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
     }
     /**
      * Return the sluggable configuration array for this model.
