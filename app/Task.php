@@ -9,4 +9,7 @@ class Task extends Model
     public function photo() {
         return $this->belongsTo('App\Photo');
     }
+    public function scopeDone($query, $flag) {
+        return $query->where('done', $flag);
+    }
 }

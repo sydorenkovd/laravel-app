@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ListsController extends Controller
 {
@@ -56,8 +57,20 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        $photo = Photos::find($id);
-        return view('lists.show', ['photo' => $photo]);
+       $tasks = Task::done(false)->get();
+        Excel::create('Filename', function($excel) {
+
+            $excel->sheet('Sheetname', function($sheet) {
+
+                $sheet->fromArray(array(
+                    array('data1', 'data2'),
+                    array('data3', 'data4')
+                ));
+
+            });
+
+        })->export('xls');
+        return view('lists.show', ['photo' => $tasks]);
     }
 
     /**
