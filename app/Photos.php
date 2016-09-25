@@ -35,6 +35,10 @@ class Photos extends Model
      */
     public function tasks() {
         return $this->hasMany('App\Task');
+//            ->where('photos_id', 1);
+    }
+    public function categories() {
+        return $this->belongsToMany('App\Category')->withTimestamps();
     }
     /**
      * Return the sluggable configuration array for this model.

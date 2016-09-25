@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Photos;
 use App\Post;
 use App\Profile;
@@ -55,6 +56,9 @@ class ListsController extends Controller
     public function show($id)
     {
       $photo = Photos::find($id);
+//        $category = new Category(['name' => 'Vacation']);
+//        $photo->categories()->save($category);
+        $photo->categories()->attach([1]);
         return view('lists.show', ['photo' => $photo]);
     }
 
