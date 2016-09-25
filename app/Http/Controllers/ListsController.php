@@ -23,7 +23,7 @@ class ListsController extends Controller
     public function index()
     {
         $photos = Photos::orderBy('title', 'DESC')->paginate(5);
-       return view('lists.index', compact('photos'));
+        return view('lists.index', compact('photos'));
     }
 
     /**
@@ -39,7 +39,7 @@ class ListsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,22 +50,31 @@ class ListsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-      $photo = Photos::find($id);
+        $photo = Photos::find($id);
 //        $category = new Category(['name' => 'Vacation']);
 //        $photo->categories()->save($category);
-        $photo->categories()->attach([1]);
+//        $photo->categories()->detach([1]);
+        $list = Photos::find(1);
+
+        $categories = [
+            new Category(['name' => 'Vacation']),
+            new Category(['name' => 'Tropical']),
+            new Category(['name' => 'Leisure']),
+        ];
+
+        $list->categories()->saveMany($categories);
         return view('lists.show', ['photo' => $photo]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,8 +85,8 @@ class ListsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -88,12 +97,12 @@ class ListsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-       Photos::destroy($id);
+        Photos::destroy($id);
         return \Redirect::route('lists.index')->withMessage('record deleted');
 
     }
