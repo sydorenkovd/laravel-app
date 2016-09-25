@@ -9,6 +9,7 @@ class Category extends Model
     protected $fillable = ['name'];
 
     public function photos() {
-        return $this->belongsToMany('App\Photos')->withTimestamps();
+        return $this->belongsToMany('App\Photos')->withPivot('description')
+            ->withTimestamps();
     }
 }

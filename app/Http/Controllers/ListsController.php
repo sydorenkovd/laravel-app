@@ -59,15 +59,18 @@ class ListsController extends Controller
 //        $category = new Category(['name' => 'Vacation']);
 //        $photo->categories()->save($category);
 //        $photo->categories()->detach([1]);
-        $list = Photos::find(1);
+        $list = Photos::find(2);
+//
+//        $categories = [
+//            new Category(['name' => 'Vacation']),
+//            new Category(['name' => 'Tropical']),
+//            new Category(['name' => 'Leisure']),
+//        ];
+        $list->categories()->updateExistingPivot(
+            '3', ['description' => 'Cause i dont care about nothing']
+        );
 
-        $categories = [
-            new Category(['name' => 'Vacation']),
-            new Category(['name' => 'Tropical']),
-            new Category(['name' => 'Leisure']),
-        ];
-
-        $list->categories()->saveMany($categories);
+//        $list->categories()->saveMany($categories);
         return view('lists.show', ['photo' => $photo]);
     }
 
