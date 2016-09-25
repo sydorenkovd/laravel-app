@@ -13,7 +13,7 @@ class AddColumnSlug extends Migration
     public function up()
     {
         Schema::table('photos', function (Blueprint $table) {
-            $table->string('slug');
+//            $table->string('slug');
         });
     }
 
