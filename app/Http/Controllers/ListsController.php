@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Photos;
 use App\Post;
 use App\Profile;
+use App\Task;
 use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -53,8 +54,8 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        $email = Profile::where('telephone', '1324121')->get()->first()->user->email;
-        return view('lists.show', ['photo' => $email]);
+      $photo = Photos::find($id);
+        return view('lists.show', ['photo' => $photo]);
     }
 
     /**

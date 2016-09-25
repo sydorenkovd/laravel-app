@@ -29,6 +29,13 @@ class Photos extends Model
     protected $sluggable = array(
         'build_from' => 'title',
         'save_to' => 'slug',);
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks() {
+        return $this->hasMany('App\Task');
+    }
     /**
      * Return the sluggable configuration array for this model.
      *
