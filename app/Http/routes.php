@@ -25,8 +25,12 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
+    Route::get('contact',
+        ['as' => 'contact', 'uses' => 'AboutController@create']);
+    Route::post('contact',
+        ['as' => 'contact_store', 'uses' => 'AboutController@store']);
     Route::get('/test', 'HomeController@test');
-    Route::get('/',  'GalleryController@index');
+    Route::get('/', 'GalleryController@index');
     Route::resource('gallery', 'GalleryController');
     Route::resource('photo', 'PhotoController');
     Route::resource('lists', 'ListsController');
@@ -36,7 +40,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/photo/edit/{id}', 'PhotoController@edit');
     Route::get('/photo/delete/{id}', 'PhotoController@destroy');
     Route::get('/home', 'HomeController@index');
-    Route::get('/photo', function(\App\Photos $photos){
+    Route::get('/photo', function (\App\Photos $photos) {
 
         $photoss = $photos::where('id', '>=', 1)->orderBy('id', 'desc')->paginate(12);
         return view('photo.index')->withPhotoss($photoss);
