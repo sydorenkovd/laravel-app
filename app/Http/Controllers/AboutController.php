@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Http\Requests\ContactFormRequest;
 
 class AboutController extends Controller
 {
@@ -13,8 +13,18 @@ class AboutController extends Controller
         return view('about.contact');
     }
 
-    public function store()
+    public function store(ContactFormRequest $request)
     {
-
+        \Mail::send('emails.contact',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'user_message' => $request->get('message')
+            ), function ($message) {
+                $message->from('jason@example.com');
+                $message->to('sydorenkovd@gmail.com', 'Admin')
+                    ->subject('TODOParrot Feedback');
+            });
+        return \Redirect::route('contact')->with('message', 'Thanks for contacting us!');
     }
 }
