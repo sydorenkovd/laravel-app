@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Updated by PhpStorm.
  * User: Виктор Сидоренко
  * Date: 27.09.2016
- * Time: 20:55
+ * Time: 22:10
  */
 ?>
 @extends('layouts.app')
@@ -11,14 +11,14 @@
 @section('content')
     <div class="row">
         <div class="col-sm-offset-2 col-sm-8">
-            <h1>Create a New List</h1>
+            <h1>Update a New List</h1>
 
             <ul> @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
 
-            {!! Form::open(array('route' => 'lists.store', 'class' => 'form')) !!}
+            {!! Form::model($list, array('route' => ['lists.update', $list->id], 'class' => 'form', 'method' => 'put')) !!}
 
             <div class="form-group">
                 {!! Form::label('List Title') !!}
@@ -33,13 +33,9 @@
         array('required', 'class'=>'form-control',
         'placeholder'=>'Things to do before leaving for vacation')) !!}
             </div>
+
             <div class="form-group">
-                {!! Form::label('Categories') !!}
-                {!! Form::select('categories', $categories, null,
-   array('multiple'=>'multiple','name'=>'categories[]')) !!}
-            </div>
-            <div class="form-group">
-                {!! Form::submit('Create List', array('class'=>'btn btn-primary')) !!}
+                {!! Form::submit('Update List', array('class'=>'btn btn-primary')) !!}
             </div>
             {!! Form::close() !!}
         </div>

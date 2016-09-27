@@ -24,7 +24,7 @@ class ListFormRequest extends Request
     public function rules()
     {
             return [
-                'name' => 'required',
+                'title' => 'required',
                 'description' => 'required'
             ];
     }

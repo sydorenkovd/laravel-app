@@ -35,7 +35,8 @@ class ListsController extends Controller
      */
     public function create()
     {
-       return view('lists.create');
+        $categories = Category::lists('name', 'id');
+       return view('lists.create')->with('categories', $categories);
     }
 
     /**
@@ -47,10 +48,14 @@ class ListsController extends Controller
     public function store(Requests\ListFormRequest $request)
     {
         $list = new Photos(array(
-             'title' => $request->get('name'),
+             'title' => $request->get('title'),
             'description' => $request->get('description')
             ));
         $list->save();
+        if (count($request->get('categories'))) {
+            $list->categories()->attach($request->get('categories'));
+        }
+
         return \Redirect::route('lists.create')->with('message', 'Your list has been created!');
     }
 
@@ -86,7 +91,8 @@ class ListsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $list = Photos::find($id);
+        return view('lists.edit')->with('list', $list);
     }
 
     /**
@@ -96,9 +102,14 @@ class ListsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Requests\ListFormRequest $request)
     {
-        //
+        $list = Photos::find($id);
+        $list->update(array(
+            'title' => $request->get('title'),
+            'description' => $request->get('description')
+        ));
+        return \Redirect::route('lists.edit', [$list->id])->with('message', 'Your list has been updated!');
     }
 
     /**
