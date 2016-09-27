@@ -35,7 +35,7 @@ class ListsController extends Controller
      */
     public function create()
     {
-        //
+       return view('lists.create');
     }
 
     /**
@@ -44,9 +44,14 @@ class ListsController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\ListFormRequest $request)
     {
-        //
+        $list = new Photos(array(
+             'title' => $request->get('name'),
+            'description' => $request->get('description')
+            ));
+        $list->save();
+        return \Redirect::route('lists.create')->with('message', 'Your list has been created!');
     }
 
     /**
