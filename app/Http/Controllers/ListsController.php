@@ -67,20 +67,22 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-       $tasks = Task::done(false)->get();
-        Excel::create('Filename', function($excel) {
+//       $tasks = Task::done(false)->get();
+//        Excel::create('Filename', function($excel) {
+//
+//            $excel->sheet('Sheetname', function($sheet) {
+//
+//                $sheet->fromArray(array(
+//                    array('data1', 'data2'),
+//                    array('data3', 'data4')
+//                ));
+//
+//            });
+//
+//        })->export('xls');
 
-            $excel->sheet('Sheetname', function($sheet) {
-
-                $sheet->fromArray(array(
-                    array('data1', 'data2'),
-                    array('data3', 'data4')
-                ));
-
-            });
-
-        })->export('xls');
-        return view('lists.show', ['photo' => $tasks]);
+        $user = \Auth::user();
+        return view('lists.show', [ 'user' => $user]);
     }
 
     /**
