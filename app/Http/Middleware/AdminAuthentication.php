@@ -25,9 +25,11 @@ class AdminAuthentication
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            if ($this->auth->user()->is_admin == true) {
+            if ($this->auth->user()->is_admin == false) {
                 return $next($request);
             }
+        } else {
+            return new RedirectResponse(url('/photos'));
         }
 
         return new RedirectResponse(url('/'));
