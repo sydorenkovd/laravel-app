@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
         $photoss = $photos::where('id', '>=', 1)->orderBy('id', 'desc')->paginate(12);
         return view('photo.index')->withPhotoss($photoss);
     });
+    Route::get('/tasks', 'TasksController@index');
 
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => 'admin'], function () {
