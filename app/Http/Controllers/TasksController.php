@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Photos;
 use App\Task;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::find(2);
+        $tasks = Task::all();
         return view('task.index')->with('tasks', $tasks);
     }
 
