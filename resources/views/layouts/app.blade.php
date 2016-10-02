@@ -31,7 +31,11 @@
 </head>
 <body id="app-layout">
 <div class="layout">
-    <p>hello red</p>
+    <p>
+    <?php for ($i = 0; $i < 57; $i++) { ?>
+    red
+    <?php } ?>
+    </p>
 </div>
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">

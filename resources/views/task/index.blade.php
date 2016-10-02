@@ -14,12 +14,11 @@
         <div class="row">
             <div class="col-sm-6">
 
-                @foreach($tasks as $task)
-                    <div class="row padding-header-10 padding-bottom-10">
+                @forelse($tasks as $task)
+                    <div class="row padding-header-10 padding-bottom-10 underline">
                         <div class="col-sm-offset-2 col-sm-4">
-                            {{$task->name}}
+                            {{$task->name}} <a href="/task/edit/{{$task->id}}"> <i class="fa fa-edit"></i></a>
                         </div>
-                        <hr>
                         <div class="col-sm-offset-1 col-sm-5">
                             {{$task->description}}
                         </div>
@@ -27,8 +26,9 @@
                     <div class="row">
 
                     </div>
-
-                @endforeach
+@empty
+                    <p>нету заданий</p>
+                @endforelse
 
             </div>
             <div class="col-sm-6">

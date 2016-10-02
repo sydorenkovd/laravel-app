@@ -46,6 +46,8 @@ Route::group(['middleware' => ['web']], function () {
         return view('photo.index')->withPhotoss($photoss);
     });
     Route::get('/tasks', 'TasksController@index');
+    Route::get('/task/edit/{id}', ['as'=> 'task.edit', 'uses' => 'TasksController@edit']);
+    Route::post('/task/update/{id}',['as' => 'task.update', 'uses' => 'TasksController@update']);
 
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => 'admin'], function () {
