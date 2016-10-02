@@ -12,7 +12,7 @@ class CreateCategoryTaskTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_tasks', function(Blueprint $table){
+        Schema::create('category_task', function(Blueprint $table){
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')
                 ->on('categories')->onDelete('cascade');

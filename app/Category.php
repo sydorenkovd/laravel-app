@@ -12,4 +12,8 @@ class Category extends Model
         return $this->belongsToMany('App\Photos')->withPivot('description')
             ->withTimestamps();
     }
+    public function tasks() {
+        return $this->belongsToMany('App\Task')->withPivot('description')
+            ->withTimestamps();
+    }
 }
